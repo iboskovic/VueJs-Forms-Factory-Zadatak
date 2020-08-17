@@ -1,0 +1,265 @@
+*
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+body 
+    background: #E5E5E5;
+
+header
+    background: #383B37;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    display: flex
+    justify-content: center
+    align-items: center
+
+    nav 
+        padding: 20px
+
+        ul
+
+            li
+                border-left: 2px solid #000000
+
+                &:last-child, &:nth-last-child(2), &:first-child 
+                    border-left: none
+
+                &:nth-last-child(2), &:last-child
+                    padding: 0 10px
+                    
+                a
+                    font-family: Arial, Helvetica, sans-serif
+                    font-size: 16px
+                    text-decoration: none
+                    color: #fff
+
+                    &:hover
+                        color: #85B2FF
+
+                i:hover
+                    color: #85B2FF    
+        
+.nav-links
+    list-style-type: none
+
+    li 
+        display: inline-block
+        padding:  0px
+        color: #fff
+        padding: 0 20px
+
+#add-profile
+    font-family: Arial, Helvetica, sans-serif
+    
+    h1
+        font-family: Arial, Helvetica, sans-serif
+        margin-top: 60px
+        margin-left: 200px
+        margin-bottom: 30px
+
+    .grid-container
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr 1fr
+        justify-content: start
+        align-content: start
+        column-gap: 40px
+
+        .col-2
+
+            p
+                font-size: 16px
+                font-weight: bold
+                text-transform: uppercase
+                margin-top: 20px
+                margin-bottom: 10px
+            
+            .form
+
+                label
+                    margin-left: 25px
+                    
+                input[type=text], input[type=email], input[type=date], input[type=tel], select
+                    width: 100%
+                    height: 50px
+                    padding: 12px 20px
+                    border: 1px solid #CCCCCC;
+                    margin-bottom: 20px
+                    margin-top: 5px
+                    cursor: pointer
+
+                    &:hover
+                        box-shadow: 0px 5px 20px #C4C4C4;
+        
+        .col-3
+
+            .col-3_grid
+                display: grid
+                grid-template-columns: repeat(3, 1fr)
+                p 
+                    font-size: 16px
+                    font-weight: bold
+                    text-transform: uppercase
+                    margin-top: 48px
+                    margin-bottom: 10px 
+                    grid-column: 1
+                    grid-row: 1
+                
+                .col-3_education
+                    grid-row-start: 2
+                    grid-column-start: 1
+                    grid-column-end: 3
+
+                    label
+                        margin-left: 20px
+
+                    input[type=text], input[type=email], input[type=date], input[type=tel], select
+                        width: 97%
+                        height: 50px
+                        padding: 12px 20px
+                        border: 1px solid #CCCCCC;
+                        cursor: pointer
+                        
+
+                        &:hover
+                            box-shadow: 0px 5px 20px #C4C4C4;
+                
+                .col-3_date
+                    grid-row-start: 2     
+                        
+                
+                    label
+                        margin-left: 20px
+                        
+                    input[type=date], select
+                        width: 60%
+                        height: 50px
+                        padding: 12px 20px
+                        border: 1px solid #CCCCCC;
+                        cursor: pointer
+                        width: 120px
+
+                        &:hover
+                            box-shadow: 0px 5px 20px #C4C4C4;
+
+                .col-3_add-btn
+                    grid-row-start: 3 
+
+                    .add
+                        padding: 10px
+                        cursor: pointer
+                        width: 80px
+
+                        &:hover
+                            text-decoration: underline
+
+                        i, span 
+                            color: #85B2FF
+                        
+                        span 
+                            margin-left: 10px
+
+                .col-3_remove-btn
+                    grid-row-start: 3
+                    grid-column-start: 3
+                    justify-self: end
+
+                    .remove
+                        padding: 10px
+                        cursor: pointer
+                        width: 120px
+
+                        &:hover
+                            text-decoration: underline
+
+                        i, span
+                            color: #85B2FF    
+                       
+                        i
+                            margin-left: 10px
+                
+                .col-3_save-btn
+                    grid-row-start: 4
+                    grid-column-start: 2
+                    grid-column-end: 4
+
+                    .save 
+                        background: #575756;
+                        box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2);
+                        border: none
+                        letter-spacing: 2px
+                        color: #ffffff
+                        text-transform: uppercase
+                        font-weight: bold
+                        font-size: 16px
+                        padding: 20px
+                        border-radius: 30px
+                        width: 220px
+                        family: Arial, Helvetica, sans-serif
+                        cursor: pointer
+                        outline: none
+                       
+                        &:hover
+                            box-shadow: 10px 20px 40px rgba(56, 59, 55, 0.5); 
+                    
+
+input:focus
+    outline: none
+
+#preview
+    margin-left: 200px
+
+    h2 
+        margin-top: 70px
+        margin-bottom: 30px
+
+    .email
+
+        i 
+            margin-right: 15px
+            margin-bottom: 15px
+        
+    .phone
+
+        i 
+            margin-right: 15px
+
+    .location
+        margin-top: 30px
+        margin-bottom: 15px
+        text-transform: uppercase
+
+    .country
+        margin-bottom: 10px 
+
+    .city
+        margin-bottom: 30px
+    
+    .education-title
+        margin-bottom: 15px
+        text-transform: uppercase
+
+    .date 
+        margin-bottom: 10px
+        font-weight: bold
+
+    .edit
+        box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2);
+        border-radius: 30px;
+        border: none
+        text-transform: uppercase
+        letter-spacing: 2px
+        text-align: center
+        outline: none
+        padding: 20px 40px
+        cursor: pointer
+        text-transform: uppercase
+        font-weight: bold
+        margin-top: 30px
+
+        &:hover
+            box-shadow: 10px 20px 40px rgba(56, 59, 55, 0.5); 
+
+        i 
+            margin-right: 15px
+
+        
