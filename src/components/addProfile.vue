@@ -43,11 +43,11 @@
                     <p>Education</p>
                     <div class="col-3_education">
                         <label for="education">Education</label>
-                        <input class="educ" type="text" placeholder="Education">
+                        <input class="educ" type="text" placeholder="Education" v-model="profile.education" required>
                     </div>    
                     <div class="col-3_date">
                         <label for="date">Date</label>
-                        <input class="date" type="date">
+                        <input class="date" type="date" v-model="profile.date" required>
                     </div>
                     <div class="col-3_add-btn">
                         <div class="add"><i class="fas fa-plus-circle"></i><span>Add</span></div>
