@@ -155,6 +155,7 @@ header nav ul li i:hover {
   padding: 12px 20px;
   border: 1px solid #CCCCCC;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 #add-profile .grid-container .col-3 .col-3_grid .col-3_education input[type=text]:hover, #add-profile .grid-container .col-3 .col-3_grid .col-3_education input[type=email]:hover, #add-profile .grid-container .col-3 .col-3_grid .col-3_education input[type=date]:hover, #add-profile .grid-container .col-3 .col-3_grid .col-3_education input[type=tel]:hover, #add-profile .grid-container .col-3 .col-3_grid .col-3_education select:hover {
@@ -178,6 +179,7 @@ header nav ul li i:hover {
   border: 1px solid #CCCCCC;
   cursor: pointer;
   width: 120px;
+  margin-bottom: 10px;
 }
 
 #add-profile .grid-container .col-3 .col-3_grid .col-3_date input[type=date]:hover, #add-profile .grid-container .col-3 .col-3_grid .col-3_date select:hover {

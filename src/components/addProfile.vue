@@ -43,17 +43,21 @@
                     <p>Education</p>
                     <div class="col-3_education">
                         <label for="education">Education</label>
-                        <input class="educ" type="text" placeholder="Education" v-model="profile.education" required>
+                        <div class="input-area" v-for="input in inputs" :key="input.id">
+                            <input :id="input.id" class="educ" type="text" placeholder="Education" v-model="profile.education"  required>
+                        </div>
                     </div>    
                     <div class="col-3_date">
-                        <label for="date">Date</label>
-                        <input class="date" type="date" v-model="profile.date" required>
+                        <label for="date">Finished</label>
+                        <div class="input-area" v-for="input in inputs" :key="input.id">
+                            <input :id="input.id" class="date" type="date" v-model="profile.date" required>
+                        </div>
                     </div>
                     <div class="col-3_add-btn">
-                        <div class="add"><i class="fas fa-plus-circle"></i><span>Add</span></div>
+                        <div class="add" @click="addInput"><i class="fas fa-plus-circle"></i><span>Add</span></div>
                     </div>
                     <div class="col-3_remove-btn">
-                        <div class="remove"><span>Remove</span><i class="fas fa-minus-circle"></i></div>
+                        <div class="remove" @click="removeInput"><span>Remove</span><i class="fas fa-minus-circle"></i></div>
                     </div>
                     <div class="col-3_save-btn">
                         <button v-on:click.prevent="post" class="save">Save changes</button>
@@ -83,37 +87,53 @@
 
 export default {
 
-  data () {
-    return {
-    
-        profile: {
-            firstName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            country: '',
-            city: '',
-            education: '',
-            date: ''
+    data () {
+
+        return {
+            counter: 0,
+            inputs: [
+                {
+                    value: '',
+                    education: '',
+                    id: 'education0'
+                }
+            ],
+            profile: {
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                country: '',
+                city: '',
+                education: '',
+                date: ''
+            },
+            submitted: false,
+        }
+    },
+
+    methods: {
+        post: function () {
+            this.$http.post('http://jsonplaceholder.typicode.com/posts', {
+                title: this.profile.firstName,
+                body: this.profile.lastName,
+                userId: 1
+            }).then(function(data){
+                console.log(data);
+                this.submitted = true;
+            });
         },
-        submitted: false,
+
+        addInput() {
+            this.inputs.push({
+                id: `education${++this.counter}`,
+                value: ''
+            })
+        },
+        removeInput(index) {
+            this.inputs.splice(index, 1);
+        }
     }
-
-
-  },
-
-  methods: {
-      post: function () {
-          this.$http.post('http://jsonplaceholder.typicode.com/posts', {
-              title: this.profile.firstName,
-              body: this.profile.lastName,
-              userId: 1
-          }).then(function(data){
-              console.log(data);
-              this.submitted = true;
-          });
-      }
-  }
 }
 </script>
 
